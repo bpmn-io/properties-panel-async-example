@@ -1,0 +1,5 @@
+[
+  { "key": "decision", "name": "Decision table" },
+  { "key": "external-service", "name": "External service" },
+  { "key": "java-bean", "name": "Java bean" }
+]

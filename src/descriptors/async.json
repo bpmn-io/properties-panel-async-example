@@ -1,0 +1,29 @@
+{
+  "name": "Async",
+  "prefix": "async",
+  "uri": "http://example.com",
+  "xml": {
+    "tagAlias": "lowerCase"
+  },
+  "associations": [],
+  "types": [
+    {
+      "name": "ImplementationDefinition",
+      "superClass": [
+        "Element"
+      ],
+      "properties": [
+        {
+          "name": "type",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "connectionKey",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    }
+  ]
+}
