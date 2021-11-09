@@ -31,7 +31,59 @@ The properties will be persisted as an extension as part of the BPMN 2.0 documen
 </bpmn:definitions>
 ```
 
-Take a look inside the [properties provider](./src/provider) to gather details.
+We use basic [preact hooks](https://preactjs.com/guide/v10/hooks) to handle the asynchronous data inside the component.
+
+```js
+import {
+  useEffect,
+  useState
+} from 'preact/hooks';
+
+// ...
+
+const EMPTY_OPTION = '';
+
+
+function Type(props) {
+  const { element } = props;
+
+  // ...
+
+  const [ fetchedOptions, setFetchedOptions ] = useState([]);
+
+  // retrieve our available options via async service call
+  useEffect(async () => {
+    const response = await fetchOptions();
+    setFetchedOptions(response);
+  }, []);
+
+  // ...
+
+  // display the fetched options in the select component
+  const getOptions = (element) => {
+    const options = [
+      { value: EMPTY_OPTION, label: translate('<none>') }
+    ];
+
+    forEach(fetchedOptions, (o) => {
+      options.push({ value: o.key, label: translate(o.name) });
+    });
+
+    return options;
+  };
+
+  return Select({
+    element,
+    id: 'async-type',
+    label: translate('Type'),
+    getValue,
+    setValue,
+    getOptions
+  });
+}
+```
+
+Take a look inside the [properties provider](./src/provider) to gather more details.
 
 To ship our custom extension with the properties panel, we have to wire both the moddle extension and the properties provider when creating the modeler.
 
