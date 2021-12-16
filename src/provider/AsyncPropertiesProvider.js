@@ -1,6 +1,6 @@
 import { SelectImplementationProps } from './properties/SelectImplementationProps';
 
-import Group from '@bpmn-io/properties-panel/lib/components/Group';
+import { Group } from '@bpmn-io/properties-panel';
 
 const LOW_PRIORITY = 500;
 

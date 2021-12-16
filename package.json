@@ -27,16 +27,16 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@bpmn-io/bpmn-properties-panel": "github:bpmn-io/bpmn-properties-panel",
-    "@bpmn-io/properties-panel": "^0.7.0",
-    "bpmn-js": "^8.8.2",
-    "min-dash": "^3.8.0",
-    "preact": "^10.5.15"
+    "@bpmn-io/properties-panel": "^0.10.0",
+    "bpmn-js": "^8.8.3",
+    "bpmn-js-properties-panel": "github:bpmn-io/bpmn-js-properties-panel#next",
+    "min-dash": "^3.8.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/plugin-transform-react-jsx": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-transform-react-jsx": "^7.16.5",
     "babel-loader": "^8.2.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "copy-webpack-plugin": "^9.0.1",
     "eslint": "^7.32.0",
     "eslint-plugin-bpmn-io": "^0.13.0",

@@ -23,7 +23,7 @@ module.exports = {
           options: {
             plugins: [
               [ '@babel/plugin-transform-react-jsx', {
-                'importSource': 'preact',
+                'importSource': '@bpmn-io/properties-panel/preact',
                 'runtime': 'automatic'
               } ]
             ]
@@ -45,8 +45,9 @@ module.exports = {
       'main'
     ],
     alias: {
-      'react': 'preact/compat',
-      'react-dom': 'preact/compat'
+      'preact': '@bpmn-io/properties-panel/preact',
+      'react': '@bpmn-io/properties-panel/preact/compat',
+      'react-dom': '@bpmn-io/properties-panel/preact/compat'
     },
     modules: [
       'node_modules',
@@ -57,7 +58,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'node_modules/bpmn-js/dist/assets', to: 'bpmn-js/assets' },
-        { from: 'node_modules/@bpmn-io/bpmn-properties-panel/dist/assets', to: 'bpmn-properties-panel/assets' },
+        { from: 'node_modules/bpmn-js-properties-panel/dist/assets', to: 'bpmn-js-properties-panel/assets' },
       ]
     })
   ]

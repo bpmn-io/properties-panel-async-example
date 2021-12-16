@@ -1,8 +1,8 @@
 # properties-panel-async-example
 
-> :warning: The API of [@bpmn-io/bpmn-properties-panel](https://github.com/bpmn-io/bpmn-properties-panel) is currently unstable and may be subject to change.
+> :warning: The API of [bpmn-js-properties-panel#next](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/next) is currently unstable and may be subject to change.
 
-This example uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) and [@bpmn-io/bpmn-properties-panel](https://github.com/bpmn-io/bpmn-properties-panel). It implements a BPMN 2.0 modeler that allows you to handle asynchronous data inside a properties panel extension.
+This example uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) and [bpmn-js-properties-panel#next](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/next). It implements a BPMN 2.0 modeler that allows you to handle asynchronous data inside a properties panel extension.
 
 ![Screenshot](./docs/screenshot.png)
 
@@ -39,7 +39,11 @@ We use basic [preact hooks](https://preactjs.com/guide/v10/hooks) to handle the 
 import {
   useEffect,
   useState
-} from 'preact/hooks';
+} from '@bpmn-io/properties-panel/preact/hooks';
+
+import {
+  SelectEntry
+} from '@bpmn-io/properties-panel';
 
 // ...
 
@@ -74,7 +78,7 @@ function Type(props) {
     return options;
   };
 
-  return Select({
+  return SelectEntry({
     element,
     id: 'async-type',
     label: translate('Type'),
@@ -95,7 +99,7 @@ import BpmnModeler from 'bpmn-js/lib/Modeler';
 import {
   BpmnPropertiesPanelModule,
   BpmnPropertiesProviderModule
-} from '@bpmn-io/bpmn-properties-panel';
+} from 'bpmn-js-properties-panel';
 
 import AsyncPropertiesProviderModule from './provider';
 

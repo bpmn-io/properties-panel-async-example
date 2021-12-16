@@ -1,9 +1,4 @@
 import {
-  useEffect,
-  useState
-} from 'preact/hooks';
-
-import {
   forEach
 } from 'min-dash';
 
@@ -11,12 +6,21 @@ import {
   getBusinessObject
 } from 'bpmn-js/lib/util/ModelUtil';
 
-import Select, { isEdited as selectIsEdited } from '@bpmn-io/properties-panel/lib/components/entries/Select';
-import TextField, { isEdited as textFieldIsEdited } from '@bpmn-io/properties-panel/lib/components/entries/TextField';
+import {
+  useEffect,
+  useState
+} from '@bpmn-io/properties-panel/preact/hooks';
+
+import {
+  SelectEntry,
+  isSelectEntryEdited,
+  TextFieldEntry,
+  isTextFieldEntryEdited
+} from '@bpmn-io/properties-panel';
 
 import {
   useService
-} from '@bpmn-io/bpmn-properties-panel';
+} from 'bpmn-js-properties-panel';
 
 import {
   fetchOptions
@@ -45,7 +49,7 @@ export function SelectImplementationProps(props) {
     {
       id: 'async-type',
       component: <Type element={ element } />,
-      isEdited: selectIsEdited
+      isEdited: isSelectEntryEdited
     }
   ];
 
@@ -53,7 +57,7 @@ export function SelectImplementationProps(props) {
     entries.push({
       id: 'async-connection',
       component: <ConnectionKey element={ element } />,
-      isEdited: textFieldIsEdited
+      isEdited: isTextFieldEntryEdited
     });
   }
 
@@ -157,7 +161,7 @@ function Type(props) {
     return options;
   };
 
-  return Select({
+  return SelectEntry({
     element,
     id: 'async-type',
     label: translate('Type'),
@@ -191,7 +195,7 @@ function ConnectionKey(props) {
     );
   };
 
-  return TextField({
+  return TextFieldEntry({
     element,
     id: 'async-connection',
     label: translate('Connection key'),
