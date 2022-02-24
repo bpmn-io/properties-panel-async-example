@@ -48,7 +48,7 @@ export function SelectImplementationProps(props) {
   const entries = [
     {
       id: 'async-type',
-      component: <Type element={ element } />,
+      component: Type,
       isEdited: isSelectEntryEdited
     }
   ];
@@ -56,7 +56,7 @@ export function SelectImplementationProps(props) {
   if (getImplementationType(element)) {
     entries.push({
       id: 'async-connection',
-      component: <ConnectionKey element={ element } />,
+      component: ConnectionKey,
       isEdited: isTextFieldEntryEdited
     });
   }
