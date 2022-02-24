@@ -103,10 +103,10 @@ function Type(props) {
       );
 
       commands.push({
-        cmd: 'properties-panel.update-businessobject',
+        cmd: 'element.updateModdleProperties',
         context: {
           element: element,
-          businessObject: businessObject,
+          moddleElement: businessObject,
           properties: { extensionElements }
         }
       });
@@ -124,22 +124,25 @@ function Type(props) {
       );
 
       commands.push({
-        cmd: 'properties-panel.update-businessobject-list',
+        cmd: 'element.updateModdleProperties',
         context: {
           element: element,
-          currentObject: extensionElements,
-          propertyName: 'values',
-          objectsToAdd: [ implementationDefinition ]
+          moddleElement: extensionElements,
+          properties: [
+            {
+              values: extensionElements.get('values').push(implementationDefinition)
+            }
+          ]
         }
       });
     }
 
     // (3) set implementation type
     commands.push({
-      cmd: 'properties-panel.update-businessobject',
+      cmd: 'element.updateModdleProperties',
       context: {
         element: element,
-        businessObject: implementationDefinition,
+        moddleElement: implementationDefinition,
         properties: { type: value }
       }
     });
