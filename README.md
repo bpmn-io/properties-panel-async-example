@@ -1,8 +1,6 @@
 # properties-panel-async-example
 
-> :warning: The API of [bpmn-js-properties-panel#next](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/next) is currently unstable and may be subject to change.
-
-This example uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) and [bpmn-js-properties-panel#next](https://github.com/bpmn-io/bpmn-js-properties-panel/tree/next). It implements a BPMN 2.0 modeler that allows you to handle asynchronous data inside a properties panel extension.
+This example uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) and [bpmn-js-properties-panel](https://github.com/bpmn-io/bpmn-js-properties-panel). It implements a BPMN 2.0 modeler that allows you to handle asynchronous data inside a properties panel extension.
 
 ![Screenshot](./docs/screenshot.png)
 
