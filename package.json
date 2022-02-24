@@ -27,10 +27,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@bpmn-io/properties-panel": "^0.10.0",
-    "bpmn-js": "^8.8.3",
-    "bpmn-js-properties-panel": "^1.0.0-alpha.0",
-    "min-dash": "^3.8.0"
+    "@bpmn-io/properties-panel": "^0.11.0",
+    "bpmn-js": "^9.0.2",
+    "bpmn-js-properties-panel": "^1.0.0-alpha.5",
+    "min-dash": "^3.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
