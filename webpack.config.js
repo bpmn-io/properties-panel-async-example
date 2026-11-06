@@ -32,9 +32,7 @@ module.exports = {
       },
       {
         test: /\.bpmn$/,
-        use: {
-          loader: 'raw-loader'
-        }
+        type: 'asset/source'
       }
     ]
   },
